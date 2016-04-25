@@ -34,9 +34,9 @@ func NewData(c *gin.Context) {
 
 		var text string
 		if int(new_price) > len(old_price) {
-			text = fmt.Sprintf("Price increase for %s from %.0f to %s", itemName, new_price, old_price)
+			text = fmt.Sprintf("Price increase for %s to %.0f from %s", itemName, new_price, old_price)
 		} else {
-			text = fmt.Sprintf("Price decrease for %s from %s to %s", itemName, new_price, old_price)
+			text = fmt.Sprintf("Price decrease for %s to %s from %s", itemName, new_price, old_price)
 		}
 
 		sendNotification(text)
