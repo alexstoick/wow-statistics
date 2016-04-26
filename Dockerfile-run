@@ -1,6 +1,6 @@
 FROM centurylink/ca-certs
 
-ADD ./statistics /
+ADD ./build/statistics /
 
 # Run the command on container startup
 CMD ["./item_list"]
