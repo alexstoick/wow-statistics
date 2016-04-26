@@ -1,0 +1,10 @@
+FROM golang
+
+# Setting up working directory
+WORKDIR /go/src/github.com/alexstoick/wow-statistics/
+ADD . /go/src/github.com/alexstoick/wow-statistics/
+
+RUN go get github.com/gin-gonic/gin
+RUN go get gopkg.in/redis.v3
+
+RUN CGO_ENABLED=0 GOOS=linux go build -ldflags "-s" -a -installsuffix cgo -o statistics
